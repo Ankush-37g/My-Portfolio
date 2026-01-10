@@ -1,15 +1,28 @@
-import react from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import {useState, useEffect} from 'react'
+import Navbar from './components/Navbar.jsx'
 
 const App = () => {
-   
+   const [darkMode, setDarkMode] = useState(false);
+
+   useEffect(()=>{
+     AOS.init({
+        duration: 1000,
+        once: false,
+        offset: 100
+     });
+     document.documentElement.classList.add('dark')
+   },[]);
+
+   const toggleDarkMode = () => {
+      setDarkMode(!darkMode);
+      document.documentElement.classList.toggle('dark');
+   }
    return (
       <div>
-         <h1 class="text-3xl font-bold underline">
-    Hello world!
-        </h1>
+       
+         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
 
       </div>
    )
