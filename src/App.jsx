@@ -31,7 +31,10 @@ const App = () => {
         {/* Galaxy Background (Only Dark Mode) */}
         {darkMode && (
           <>
-            <div className="fixed inset-0 z-0">
+            <div className="fixed inset-0 -z-10 pointer-events-none"  style={{
+              background: "black",
+              isolation: "isolate",
+            }}>
               <Galaxy
                 mouseInteraction
                 mouseRepulsion
@@ -43,7 +46,7 @@ const App = () => {
             </div>
 
             {/* Overlay */}
-            <div className="fixed inset-0 bg-black/40 z-[1]"></div>
+            <div className="fixed inset-0 bg-black/40 -z-0"></div>
           </>
         )}
 
