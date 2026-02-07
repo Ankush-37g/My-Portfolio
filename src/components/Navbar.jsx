@@ -47,7 +47,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           animate={{ y: 0 }}
           duration={{ duration: 0.5 }}
           className={`flex items-center justify-between ${colors.navBg}
-          backdrop-blur-lg rounded-2xl px-4 lg:px-8 py-2 shadow-lg `}
+          backdrop-blur-lg rounded-2xl px-4 lg:px-10 py-2 shadow-lg `}
         >
             <div className="flex items-center justify-center space-x-6 lg:space-x-8">
 
@@ -57,7 +57,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center space-x-2"
                 >
-                  <span className={`text-xl font-bold ${colors.textPrimary}`}>
+                  <span className={`text-3xl font-bold ${colors.textPrimary}`}>
                     Portfolio
                     <span className="text-orange-500">.</span>
                   </span>
@@ -73,7 +73,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                       className="relative"
                     >
                       <motion.span
-                        className={`font-medium transition-colors duration-300 
+                        className={`text-xl transition-colors duration-300 
                                     ${
                                       activeSection === item.name.toLowerCase()
                                         ? colors.textActive
@@ -116,7 +116,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                       href="#contact"
                       whileHover={{scale: 1.05}}
                       whileTap={{scale: 0.95}}
-                      className={`hidden lg:block px-6 py-2 font-semibold rounded-full bg-linear-to-r
+                      className={`hidden lg:block ml-3 text-2xl px-6 py-2 font-semibold rounded-full bg-linear-to-r
                                   ${colors.button} text-white shadow-md hover:shadow-lg transition-shadow`}
                     >
                        
