@@ -56,20 +56,12 @@ const Hero = ({darkMode}) => {
             className='body-font z-10'
         >
                 
-            <div className='container mx-auto flex px-4 sm:px-8 lg:px-14 py-12 lg:py-32 flex-col lg:flex-row items-center justify-between lg:mt-7 mt-14'>
+            <div className='container mx-auto flex flex-col lg:flex-row px-4 sm:px-8 lg:px-14 py-12 lg:py-25 items-center justify-between lg:mt-7 mt-14 gap-8 lg:gap-0'>
 
-                    <div className='lg:w-3/5 w-full flex flex-col items-center mb-12 lg:mb-0'>
+                    <div className='lg:w-3/5 w-full flex flex-col mb-12 lg:mb-0 '>
 
-                        {/* Social Icons */}
-                        {/* <div className='flex space-x-6 sm:mb-7 mb-6 w-full justify-center lg:justify-start'>
-                            {socialIcons.map((social, index) => (
-                                <a key={index} href='#' data-aos-delay={`${400 + index * 100}`} className='transform hover:scale-110 transition-transform duration-300'>
-                                    <img src={social.icon} alt={social.alt} className='w-8 h-8 sm:h-10 sm:w-10' />
-                                </a>
-                            ))}
-                        </div>    */}
                     
-                        <div className='lg:w-9/10 sm:w-full mb-3'>
+                        <div className='lg:w-9/11 sm:w-full mb-3'>
                             
                             {/* Basic horizontal loop */}
                             <LogoLoop
@@ -89,7 +81,7 @@ const Hero = ({darkMode}) => {
 
                         {/* Title */}
                         <h1 
-                            className={`title-font text-5xl sm:text-5xl md:text-5xl lg:text-8xl mb-4 font-bold ${theme.textPrimary} `}
+                            className={`title-font text-4xl text-center md:text-start  sm:text-5xl md:text-6xl lg:text-8xl mb-4 font-bold ${theme.textPrimary} `}
                             data-aos='fade-up'
                             data-aos-delay='500'
                         >
@@ -109,10 +101,8 @@ const Hero = ({darkMode}) => {
                         <div className='w-full pt-4 sm:pt-6'>
 
                             <div 
-                                className='flex flex-col sm:flex-row justify-center
-                                            gap-3 sm:gap-4' 
-                                data-aos='fade-up' 
-                                data-aos-delay='700'>
+                                className='flex flex-col sm:flex-row justify-start gap-3 sm:gap-4'             
+                               >
 
                                 <a href={CV} download className='w-full sm:w-auto'>
                                 
@@ -147,20 +137,15 @@ const Hero = ({darkMode}) => {
 
                     </div>
 
-                    {/* Images */}
-                    <div className='lg:w-1/2 w-full flex justify-center lg:max-w-lg mt-8 lg:mt-12' 
-                        data-aos='fade-left' 
-                        data-aos-delay='400'>
+                    {/* Image */}
+                    <div className='w-full lg:w-2/5 flex justify-center items-center' 
+                       >
 
-                            <div className={`relative w-4/5 sm:w-3/4 lg:w-full `}>
-                                <div className='relative overflow-hidden'>
-                                    <img 
-                                    src={home} 
-                                    alt='Hero Image' 
-                                    className='w-full h-full object-cover transform hover:scale-105 
-                                    transition-transform duration-500 rounded-lg shadow-lg'/>
-                                </div>
-                            </div>
+                            <img 
+                            src={home} 
+                            alt='Hero Image' 
+                            className='w-64 sm:w-80 h-64 sm:h-80 lg:w-full lg:h-full object-contain transform hover:scale-105 
+                            transition-transform duration-500 rounded-lg shadow-lg'/>        
                     </div>
               
             </div>
