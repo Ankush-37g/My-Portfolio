@@ -66,19 +66,12 @@ const Projects = ({ darkMode }) => {
       githubUrl: "https://github.com/Ankush-37g/Monify",
       demoUrl: "https://monify-five.vercel.app/"
     },
-    {
-      title: "Content Generator",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      tags: ["Python", "openAI"],
-      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop",
-      githubUrl: "https://github.com",
-      demoUrl: "https://demo.example.com"
-    }
+
   ];
 
   return (
 
-    <section id="projects" className='py-8sm:py-14'>
+    <section id="projects" className='py-8 sm:py-14'>
         <div className="container mx-auto min-h-screen sm:py-16 px-5 md:px-2 font-sans">
             <div className="mx-auto">
                 {/* Header Section */}
