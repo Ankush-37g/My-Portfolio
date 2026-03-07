@@ -79,7 +79,7 @@ const Hero = ({darkMode}) => {
 
                             {/* Title */}
                             <h1 
-                                className={`title-font text-center md:text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 font-bold ${theme.textPrimary} `}
+                                className={`title-font text-center md:text-start text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 font-bold ${theme.textPrimary} `}
                                 data-aos='fade-up'
                                 data-aos-delay='500'
                             >
