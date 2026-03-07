@@ -12,13 +12,12 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiExpress, 
-  SiFirebase,
   SiPostgresql,
   SiPython,
   SiCplusplus 
 } from "react-icons/si";
 
-import LogoLoop from '@/3dcomponents/logoLoop.jsx'
+import LogoLoop from "../3dcomponents/LogoLoop.jsx";
 
 
 const SkillCard = ({ name, proficiency, color, icon, darkMode }) => {
@@ -136,12 +135,6 @@ const Skills = ({ darkMode }) => {
         { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
         { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
         { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-    ];
-    // Alternative with image sources
-    const imageLogos = [
-        { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-        { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-        { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
     ];
     
     return (
