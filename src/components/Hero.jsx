@@ -5,7 +5,6 @@ import git from '../assets/git.png'
 import CV from '../assets/CV.pdf'
 import { Download, Mail } from 'lucide-react'
 import home from '../assets/home.png'
-import LogoLoop from '@/3dcomponents/logoLoop.jsx'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
 
