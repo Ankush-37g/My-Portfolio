@@ -10,32 +10,28 @@ const About = ({darkMode}) => {
 
     return (
         <section id="about">
-            <div className={`min-h-screen flex items-center justify-center p-6 md:p-10 font-sans ${darkMode ? 'bg-black/50' : 'bg-white'}`}>
+            <div className={`container min-h-screen mx-auto flex justify-center p-6 sm:p-0 font-sans ${darkMode ? 'bg-black/50' : 'bg-white'}`}>
 
-                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-30 items-center">
+                <div className="flex flex-col lg:flex-row gap-16 items-center">
 
                     {/* Left side: image} */}
                     <div className="flex justify-center lg:justify-start" 
                         data-aos='fade-right' 
                         data-aos-delay='400'>
 
-                        <img src={avatar} alt="Avatar" className="w-full h-full " />
+                        <img src={avatar} alt="Avatar" className="w-[380px] sm:w-[450px] md:w-[600px] lg:w-[900px] " />
                     </div>
 
                     {/* Right Side: Content */}
-                    <div className="space-y-8" data-aos='fade-left' data-aos-delay='200'>
+                    <div className="lg:w-3/5 space-y-8" data-aos='fade-left' data-aos-delay='200'>
         
-                        <h1 className= {`text-5xl text-center md:text-8xl font-semibold mb-10 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h1 className= {`text-5xl sm:text-4xl md:text-8xl text-center font-semibold mb-10 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                             About <span className="text-orange-500">Me</span>
                         </h1>
                         
                         <div className={`p-8 rounded-[2.5rem] mb-10 shadow-sm border relative ${darkMode ? 'bg-slate-900/50 border-slate-700' : 'bg-slate-50 border-slate-100'}`}>
                             <p className={`text-2xl leading-relaxed ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Dolore suscipit expedita blanditiis temporibus nostrum 
-                            nulla fugit consequuntur! Ullam earum perspiciatis sit ea, 
-                            asperiores dolorum illum temporibus quidem? Iusto, 
-                            officia mollitia!
+                              I’m a Computer Science student passionate about building modern web applications and solving real-world problems through code. I enjoy working with technologies like React, Node.js, and MongoDB to create full-stack projects. Alongside development, I actively practice data structures and algorithms to strengthen my problem-solving skills and write efficient, scalable solutions. I’m always eager to learn new technologies and take on challenging projects that allow me to grow as a developer.
                             </p>
                         </div>
                         

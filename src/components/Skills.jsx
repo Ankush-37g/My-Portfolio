@@ -8,12 +8,18 @@ import {
 import { 
   SiTailwindcss, 
   SiMongodb, 
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
   SiExpress, 
   SiFirebase,
   SiPostgresql,
   SiPython,
   SiCplusplus 
 } from "react-icons/si";
+
+import LogoLoop from '@/3dcomponents/logoLoop.jsx'
+
 
 const SkillCard = ({ name, proficiency, color, icon, darkMode }) => {
   return (
@@ -123,26 +129,59 @@ const Skills = ({ darkMode }) => {
 
 
     ];
+
+
+    const techLogos = [
+        { node: <SiReact />, title: "React", href: "https://react.dev" },
+        { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+        { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+        { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    ];
+    // Alternative with image sources
+    const imageLogos = [
+        { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+        { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+        { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+    ];
+    
     return (
        <section 
         id="skills"
-        className='py-14 relative overflow-hidden'>
+        className='py-8 sm:py-14 relative overflow-hidden'>
 
-            <div className="container mx-auto px-5 py-14">
+            <div className="container mx-auto px-5 sm:py-14">
 
                 <div className= 'mb-20 text-center ' data-aos='fade-up' data-aos-delay='200'>
 
-                    <h1 className= {`text-3xl sm:text-4xl md:text-8xl font-semibold title-font mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <h1 className= {`text-5xl sm:text-4xl md:text-8xl font-semibold title-font mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                         My 
                         <span className="text-orange-500"> Skills</span>
                     </h1>
 
-                    <p className={`text-lg mx-auto max-w-2xl leading-relaxed ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
+                    <p className={`text-xl mx-auto max-w-2xl leading-relaxed ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
                         Here are some of the technologies and tools I have experience with:
                     </p>
 
                 </div> 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  gap-8" data-aos='fade-up' data-aos-delay='400'>
+
+                {/* Basic horizontal loop  */}
+                <div className="mb-6 " data-aos='fade-up' data-aos-delay='400'>
+                    <LogoLoop
+                      logos={techLogos}
+                      speed={70}
+                      direction="left"
+                      logoHeight={30}
+                      gap={40}
+                      hoverSpeed={0}
+                      scaleOnHover
+              
+                      iconColor={darkMode ? "white" : "black"}
+                      ariaLabel="Technology partners"
+                    />
+                </div>
+                
+                
+                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3  gap-8" data-aos='fade-up' data-aos-delay='400'>
                     {skills.map((skill, index) => (
                         <SkillCard 
                             key={index}

@@ -47,112 +47,114 @@ const Hero = ({darkMode}) => {
     const theme = darkMode ? darkTheme : lightTheme;
   
     return (
-    <div className=' relative overflow-hidden min-h-screen flex flex-col'>
+    
 
         <section
             id= 'home'
             data-aos='fade-up' 
             data-aos-delay='250'
-            className='body-font z-10'
+            className='body-font z-10 pt-25 sm:pt-40'
         >
+            <div className='container mx-auto flex justify-center p-6 font-sans'>
                 
-            <div className='container mx-auto flex flex-col lg:flex-row px-4 sm:px-8 lg:px-14 py-12 lg:py-25 items-center justify-between lg:mt-7 mt-14 gap-8 lg:gap-0'>
+                <div className='flex flex-col lg:flex-row py-12 items-center justify-between gap-10'>
 
-                    <div className='lg:w-3/5 w-full flex flex-col mb-12 lg:mb-0 '>
-
-                    
-                        <div className='lg:w-9/11 sm:w-full mb-3'>
+                        {/* Left part */}
+                        <div className='lg:w-3/5 flex flex-col mb-12 lg:mb-0 '>
                             
-                            {/* Basic horizontal loop */}
-                            <LogoLoop
-                                logos={techLogos}
-                                speed={70}
-                                direction="left"
-                                logoHeight={30}
-                                gap={40}
-                                hoverSpeed={0}
-                                scaleOnHover
-                        
-                                iconColor={darkMode ? "white" : "black"}
-                                ariaLabel="Technology partners"
-                            />
-                                       
-                        </div> 
+                            {/* Social Icons */}
+                            <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 w-full">
+                                {socialIcons.map((social, index) => (
+                                    <a 
+                                        key={index} 
+                                        href="#" 
+                                        target="_blank" 
+                                        data-aos-delay={`${400 + index * 100}`}
+                                        rel="noopener noreferrer"
+                                        className='transform hover:scale-110 transition-transform duration-300'
+                                    >
+                                        <img src={social.icon} alt={social.alt} className="w-8 h-8 sm:w-13 sm:h-13 object-contain rounded-2xl" />
+                                    </a>
+                                ))}
+                            </div>
 
-                        {/* Title */}
-                        <h1 
-                            className={`title-font text-4xl text-center md:text-start  sm:text-5xl md:text-6xl lg:text-8xl mb-4 font-bold ${theme.textPrimary} `}
+                            {/* Title */}
+                            <h1 
+                                className={`title-font text-center md:text-start text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 font-bold ${theme.textPrimary} `}
+                                data-aos='fade-up'
+                                data-aos-delay='500'
+                            >
+                                Hi, I'm <span className='text-orange-500'>Ankush <br /> Sharma</span>
+                            </h1>
+
+                            {/* Text */}
+                            <p 
+                            className={`${theme.textSecondary} sm:mb-8 mb-6 text-gray-lg max-w-xl`}
                             data-aos='fade-up'
-                            data-aos-delay='500'
-                        >
-                            Hi, I'm <span className='text-orange-500'>Ankush <br></br> Sharma</span>
-                        </h1>
+                            data-aos-delay='600'
+                            >
+                                      A passionate Full Stack Developer dedicated to creating responsive, 
+    user-friendly, and efficient web applications. I enjoy turning ideas 
+    into real-world digital solutions and focus on building clean, intuitive, 
+    and meaningful user experiences. I am always eager to learn, grow, and 
+    continuously improve my skills.
+                            </p>
 
-                        {/* Text */}
-                        <p 
-                        className={`${theme.textSecondary} sm:mb-8 mb-6 textlg:text-2xl sm:text-xl ml-5`}
-                        data-aos='fade-up'
-                        data-aos-delay='600'
-                        >
-                                A passionate Full Stack Developer, focused on building responsive, <br></br> user-friendly web applications and continuously learning modern technologies.
-                        </p>
+                            {/* Buttons */}
+                            <div className='w-full pt-6 sm:pt-8'>
 
-                        {/* Buttons */}
-                        <div className='w-full pt-4 sm:pt-6'>
+                                <div 
+                                    className='flex flex-col sm:flex-row justify-start gap-3 sm:gap-4'             
+                                >
 
-                            <div 
-                                className='flex flex-col sm:flex-row justify-start gap-3 sm:gap-4'             
-                               >
-
-                                <a href={CV} download className='w-full sm:w-auto'>
-                                
-                                    <button className='w-full sm:w-auto inline-flex items-center justify-center  text-white
-                                                    bg-gradient-to-r from-orange-500 to-amber-500 border-0
-                                                    py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
-                                                    rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform'>
-                                                    
-                                                    
-                                            <Download size={20} className='mr-2'/>
-                                            Download CV
-                                    </button>
-
-                                </a>
-
-                                <a href="#contact" className='w-full sm:w-auto'>
-                                
-                                    <button className={`${theme.buttonSecondary} w-full sm:w-auto inline-flex items-center justify-center text-white
-                                            border-0 py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
-                                            rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform`}>
+                                    <a href={CV} download className='w-full sm:w-auto'>
                                     
-                                            <Mail size={20} className={`${theme.textSecondary} mr-2`}/>
-                                            <p className={`${theme.textSecondary}`}>Contact Me</p>
-                                    </button>
+                                        <button className='w-full sm:w-auto inline-flex items-center justify-center text-white bg-gradient-to-r from-orange-500 to-amber-500 border-0 py-4 px-8 sm:px-10 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
+                                        rounded-full text-2xl sm:text-3xl font-semibold transition-all             
+                                        duration-300 transform'>               
+                                                          
+                                              <Download size={35} className='mr-2'/>
+                                               Download CV          
+                                                               
+                                        </button>
 
-                                </a>
+                                    </a>
 
+                                    <a href="#contact" className='w-full sm:w-auto'>
+                                    
+                                        <button className={`${theme.buttonSecondary} w-full sm:w-auto inline-flex items-center justify-center text-white
+                                                border-0 py-4 px-8 sm:px-10 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
+                                                rounded-full text-2xl sm:text-3xl font-semibold transition-all duration-300 transform`}>
+                                        
+                                                <Mail size={35} className={`${theme.textSecondary} mr-2`}/>
+                                                <p className={`${theme.textSecondary}`}>Contact Me</p>
+                                        </button>
+
+                                    </a>
+
+
+                                </div>
 
                             </div>
 
                         </div>
 
-                    </div>
+                        {/* Right Image */}
+                        <div className="flex justify-center lg:justify-end" 
+                        >
+                                <img 
+                                src={home} 
+                                alt='Hero Image' 
+                                 className='w-[380px] sm:w-[450px] md:w-[600px] lg:w-[900px] transform hover:scale-105 transition-transform duration-500'/>           
+                        </div>
+                
+                </div>
 
-                    {/* Image */}
-                    <div className='w-full lg:w-2/5 flex justify-center items-center' 
-                       >
-
-                            <img 
-                            src={home} 
-                            alt='Hero Image' 
-                            className='w-64 sm:w-80 h-64 sm:h-80 lg:w-full lg:h-full object-contain transform hover:scale-105 
-                            transition-transform duration-500 rounded-lg shadow-lg'/>        
-                    </div>
-              
             </div>
 
         </section>
 
-    </div>
+   
     );
 
 }

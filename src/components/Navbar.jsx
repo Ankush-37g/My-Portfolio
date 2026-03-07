@@ -40,14 +40,15 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <div className="flex justify-center w-full fixed z-50 mt-4">
+    
+      <div className="flex backdrop-blur-lg py-4 fixed justify-center w-full z-50 px-4">
 
         <motion.nav
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           duration={{ duration: 0.5 }}
           className={`flex items-center justify-between ${colors.navBg}
-          backdrop-blur-lg rounded-2xl px-4 lg:px-10 py-2 shadow-lg `}
+          backdrop-blur-lg rounded-2xl px-4 lg:px-15 py-2 shadow-lg `}
         >
             <div className="flex items-center justify-center space-x-6 lg:space-x-8">
 
@@ -57,7 +58,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center space-x-2"
                 >
-                  <span className={`text-3xl font-bold ${colors.textPrimary}`}>
+                  <span className={`text-4xl font-bold ${colors.textPrimary}`}>
                     Portfolio
                     <span className="text-orange-500">.</span>
                   </span>
@@ -73,7 +74,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                       className="relative"
                     >
                       <motion.span
-                        className={`text-xl transition-colors duration-300 
+                        className={`text-2xl transition-colors duration-300 
                                     ${
                                       activeSection === item.name.toLowerCase()
                                         ? colors.textActive
@@ -104,9 +105,9 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                          
                           {
                             darkMode ? (
-                               <Sun className="w-5 h-5 text-yellow-300"/>
+                               <Sun className="w-7 h-7 text-yellow-300"/>
                             ) : (
-                               <Moon className="w-5 h-5 text-gray-700"/>
+                               <Moon className="w-7 h-7 text-gray-700"/>
                             )
                           }
                     </motion.button>
@@ -209,7 +210,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
         </motion.nav>
 
-    </div>
+      </div>
+
   );
 };
 
