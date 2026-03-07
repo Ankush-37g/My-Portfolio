@@ -3,9 +3,9 @@ import { ChevronRight } from 'lucide-react';
 const About = ({darkMode}) => {
 
     const stats = [
-        { label: 'Education', value: '5+' },
-        { label: 'Years Experience', value: '10+' },
-        { label: 'Projects Completed', value: '100+' },
+    { label: 'Projects Completed', value: '4+' },
+    { label: 'Technologies', value: '10+' },
+    { label: 'Coding Practice', value: '300+' },
     ];
 
     return (
