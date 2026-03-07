@@ -5,8 +5,8 @@ const Footer = ({ darkMode }) => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <Github size={20} />, href: "#", label: "GitHub" },
-    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
+    { icon: <Github size={20} />, href: "https://github.com/Ankush-37g", label: "GitHub" },
+    { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/ankush-sharma-7bb5382ba/", label: "LinkedIn" },
     { icon: <Twitter size={20} />, href: "#", label: "Twitter" },
   ];
 
