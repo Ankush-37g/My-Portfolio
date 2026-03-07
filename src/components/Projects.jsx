@@ -80,18 +80,18 @@ const Projects = ({ darkMode }) => {
 
   return (
 
-    <section id="projects" className='py-8 sm:py-14'>
-        <div className="container mx-auto min-h-screen sm:py-16 px-5 md:px-2 font-sans">
+    <section id="projects" className='py-6 sm:py-10'>
+        <div className="container mx-auto min-h-screen sm:py-12 px-5 md:px-2 font-sans">
             <div className="mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="200">
             
-                    <h1 className={`text-5xl sm:text-5xl md:text-7xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}
+                    <h1 className={`text-4xl sm:text-3xl md:text-6xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}
                        
                     >
                         My <span className="text-orange-500">Projects</span>
                     </h1>
-                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-500'} text-lg`}>
+                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-500'} text-md`}>
                         A showcase of my recent work
                     </p>
 

@@ -146,12 +146,12 @@ const Skills = ({ darkMode }) => {
 
                 <div className= 'mb-20 text-center ' data-aos='fade-up' data-aos-delay='200'>
 
-                    <h1 className= {`text-5xl sm:text-4xl md:text-8xl font-semibold title-font mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <h1 className= {`text-4xl sm:text-3xl md:text-6xl font-semibold title-font mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                         My 
                         <span className="text-orange-500"> Skills</span>
                     </h1>
 
-                    <p className={`text-xl mx-auto max-w-2xl leading-relaxed ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
+                    <p className={`text-md mx-auto max-w-2xl leading-relaxed ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>
                         Here are some of the technologies and tools I have experience with:
                     </p>
 

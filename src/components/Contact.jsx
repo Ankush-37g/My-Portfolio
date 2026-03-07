@@ -97,11 +97,11 @@ const Contact = ({ darkMode }) => {
             <div className="container mx-auto px-5 sm:py-14 font-sans">
 
                 <div className="text-center mb-8 sm:mb-10 md:mb-12" data-aos="fade-up" data-aos-delay="200">
-                     <h1 className= {`text-5xl sm:text-4xl md:text-8xl font-semibold title-font mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                     <h1 className= {`text-4xl sm:text-3xl md:text-6xl font-semibold title-font mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                         Get In
                         <span className="text-orange-500"> Touch</span>
                     </h1>
-                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-500'} text-lg`}>
+                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-500'} text-md`}>
                         Have a question or want to work together?
                     </p>
                 </div>

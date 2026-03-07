@@ -52,17 +52,17 @@ const Hero = ({darkMode}) => {
             id= 'home'
             data-aos='fade-up' 
             data-aos-delay='250'
-            className='body-font z-10 pt-25 sm:pt-40'
+            className='body-font z-10 pt-16 sm:pt-28'
         >
             <div className='container mx-auto flex justify-center p-6 font-sans'>
                 
-                <div className='flex flex-col lg:flex-row py-12 items-center justify-between gap-10'>
+                <div className='flex flex-col lg:flex-row py-9 items-center justify-between gap-8'>
 
                         {/* Left part */}
                         <div className='lg:w-3/5 flex flex-col mb-12 lg:mb-0 '>
                             
                             {/* Social Icons */}
-                            <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 w-full">
+                            <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 mb-5 w-full">
                                 {socialIcons.map((social, index) => (
                                     <a 
                                         key={index} 
@@ -72,14 +72,14 @@ const Hero = ({darkMode}) => {
                                         rel="noopener noreferrer"
                                         className='transform hover:scale-110 transition-transform duration-300'
                                     >
-                                        <img src={social.icon} alt={social.alt} className="w-8 h-8 sm:w-13 sm:h-13 object-contain rounded-2xl" />
+                                        <img src={social.icon} alt={social.alt} className="w-6 h-6 sm:w-10 sm:h-10 object-contain rounded-2xl" />
                                     </a>
                                 ))}
                             </div>
 
                             {/* Title */}
                             <h1 
-                                className={`title-font text-center md:text-start text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 font-bold ${theme.textPrimary} `}
+                                className={`title-font text-center md:text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 font-bold ${theme.textPrimary} `}
                                 data-aos='fade-up'
                                 data-aos-delay='500'
                             >
@@ -88,7 +88,7 @@ const Hero = ({darkMode}) => {
 
                             {/* Text */}
                             <p 
-                            className={`${theme.textSecondary} sm:mb-8 mb-6 text-gray-lg max-w-xl`}
+                            className={`${theme.textSecondary} sm:mb-6 mb-5 text-gray-lg max-w-xl`}
                             data-aos='fade-up'
                             data-aos-delay='600'
                             >
@@ -100,19 +100,19 @@ const Hero = ({darkMode}) => {
                             </p>
 
                             {/* Buttons */}
-                            <div className='w-full pt-6 sm:pt-8'>
+                            <div className='w-full pt-4 sm:pt-6'>
 
                                 <div 
-                                    className='flex flex-col sm:flex-row justify-start gap-3 sm:gap-4'             
+                                    className='flex flex-col sm:flex-row justify-start gap-2 sm:gap-3'             
                                 >
 
                                     <a href={CV} download className='w-full sm:w-auto'>
                                     
-                                        <button className='w-full sm:w-auto inline-flex items-center justify-center text-white bg-gradient-to-r from-orange-500 to-amber-500 border-0 py-4 px-8 sm:px-10 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
-                                        rounded-full text-2xl sm:text-3xl font-semibold transition-all             
+                                        <button className='w-full sm:w-auto inline-flex items-center justify-center text-white bg-gradient-to-r from-orange-500 to-amber-500 border-0 py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
+                                        rounded-full text-xl sm:text-2xl font-semibold transition-all             
                                         duration-300 transform'>               
                                                           
-                                              <Download size={35} className='mr-2'/>
+                                              <Download size={28} className='mr-2'/>
                                                Download CV          
                                                                
                                         </button>
@@ -122,10 +122,10 @@ const Hero = ({darkMode}) => {
                                     <a href="#contact" className='w-full sm:w-auto'>
                                     
                                         <button className={`${theme.buttonSecondary} w-full sm:w-auto inline-flex items-center justify-center text-white
-                                                border-0 py-4 px-8 sm:px-10 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
-                                                rounded-full text-2xl sm:text-3xl font-semibold transition-all duration-300 transform`}>
+                                                border-0 py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
+                                                rounded-full text-xl sm:text-2xl font-semibold transition-all duration-300 transform`}>
                                         
-                                                <Mail size={35} className={`${theme.textSecondary} mr-2`}/>
+                                                <Mail size={28} className={`${theme.textSecondary} mr-2`}/>
                                                 <p className={`${theme.textSecondary}`}>Contact Me</p>
                                         </button>
 
@@ -144,7 +144,7 @@ const Hero = ({darkMode}) => {
                                 <img 
                                 src={home} 
                                 alt='Hero Image' 
-                                 className='w-[380px] sm:w-[450px] md:w-[600px] lg:w-[900px] transform hover:scale-105 transition-transform duration-500'/>           
+                                 className='w-[285px] sm:w-[337px] md:w-[450px] lg:w-[675px] transform hover:scale-105 transition-transform duration-500'/>           
                         </div>
                 
                 </div>

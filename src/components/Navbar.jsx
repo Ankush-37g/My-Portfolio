@@ -48,7 +48,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           animate={{ y: 0 }}
           duration={{ duration: 0.5 }}
           className={`flex items-center justify-between ${colors.navBg}
-          backdrop-blur-lg rounded-2xl px-4 lg:px-15 py-2 shadow-lg `}
+          backdrop-blur-lg rounded-2xl px-4 lg:px-8 py-2 shadow-lg `}
         >
             <div className="flex items-center justify-center space-x-6 lg:space-x-8">
 
@@ -74,7 +74,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                       className="relative"
                     >
                       <motion.span
-                        className={`text-2xl transition-colors duration-300 
+                        className={`text-lg transition-colors duration-300 
                                     ${
                                       activeSection === item.name.toLowerCase()
                                         ? colors.textActive
@@ -105,9 +105,9 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                          
                           {
                             darkMode ? (
-                               <Sun className="w-7 h-7 text-yellow-300"/>
+                               <Sun className="w-6 h-6 text-yellow-300"/>
                             ) : (
-                               <Moon className="w-7 h-7 text-gray-700"/>
+                               <Moon className="w-6 h-6 text-gray-700"/>
                             )
                           }
                     </motion.button>
@@ -117,7 +117,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                       href="#contact"
                       whileHover={{scale: 1.05}}
                       whileTap={{scale: 0.95}}
-                      className={`hidden lg:block ml-3 text-2xl px-6 py-2 font-semibold rounded-full bg-linear-to-r
+                      className={`hidden lg:block ml-3 text-xl px-4 py-2 font-semibold rounded-full bg-linear-to-r
                                   ${colors.button} text-white shadow-md hover:shadow-lg transition-shadow`}
                     >
                        
