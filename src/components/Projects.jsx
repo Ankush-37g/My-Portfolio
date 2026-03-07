@@ -66,6 +66,15 @@ const Projects = ({ darkMode }) => {
       githubUrl: "https://github.com/Ankush-37g/Monify",
       demoUrl: "https://monify-five.vercel.app/"
     },
+    {
+      title: "Multi-Agent Pathfinding Simulator",
+      description: "A 2D multi-agent simulator that visualizes grid navigation using the A* pathfinding algorithm with obstacle and collision avoidance.",
+      tags: ["Python", "A*", "Pygame", "Multiprocessing"],
+      imageUrl: "https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/793c012801865f90d6e49dbb39008a1eb1723811/1-Figure1-1.png",
+      githubUrl: "https://github.com/ElectroCubic/Multi-Agent-Pathfinding-Sim",
+      demoUrl: ""
+    }
+  
 
   ];
 

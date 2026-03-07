@@ -1,43 +1,92 @@
-//create a contact form with name, email, message fields and a submit button. Use tailwind css for styling and make it responsive. Add validation for the fields and display error messages if the validation fails.
 
-//import contact image from asset
 import contactImg from '../assets/contactImg.png';
 
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = ({ darkMode }) => {
     const [formData, setFormData] = useState({
-        name: '',
+        firstname: '',
+        lastname: '',
         email: '',
+        phone: '',
         message: ''
     });
 
     const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [statusMessage, setStatusMessage] = useState('');
+
+    // Initialize EmailJS (replace with your public key)
+    useEffect(() => {
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY_HERE');
+    }, []);
 
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
+        // Clear error for this field when user starts typing
+        if (errors[e.target.name]) {
+            setErrors({
+                ...errors,
+                [e.target.name]: ''
+            });
+        }
     };
 
-    const handleFormData = () => {
+    const handleFormData = async (e) => {
+        e.preventDefault();
+        
         //validate form
         const newErrors = {};
-        if (!formData.name) newErrors.name = 'Name is required';
-        if (!formData.email) newErrors.email = 'Email is required';
+        if (!formData.firstname.trim()) newErrors.firstname = 'First name is required';
+        if (!formData.lastname.trim()) newErrors.lastname = 'Last name is required';
+        if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-        if (!formData.message) newErrors.message = 'Message is required';
+        if (!formData.message.trim()) newErrors.message = 'Message is required';
+        
         setErrors(newErrors);
+        
         if (Object.keys(newErrors).length === 0) {
-            //submit form
-            alert('Form submitted successfully!');
-            setFormData({
-                name: '',
-                email: '',
-                message: ''
-            });
+            setLoading(true);
+            setStatusMessage('');
+            
+            try {
+                // Send email using EmailJS
+                const response = await emailjs.send(
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID ,
+                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID ,
+                    {
+                        from_name: `${formData.firstname} ${formData.lastname}`,
+                        from_email: formData.email,
+                        phone: formData.phone,
+                        message: formData.message,
+                        to_email: import.meta.env.VITE_EMAILJS_TO_EMAIL
+                    }
+                );
+
+                if (response.status === 200) {
+                    setStatusMessage('✓ Message sent successfully! I\'ll get back to you soon.');
+                    setFormData({
+                        firstname: '',
+                        lastname: '',
+                        email: '',
+                        phone: '',
+                        message: ''
+                    });
+                    // Clear success message after 5 seconds
+                    setTimeout(() => setStatusMessage(''), 5000);
+                }
+            } catch (error) {
+                console.error('Error sending email:', error);
+                setStatusMessage('✗ Failed to send message. Please try again.');
+                // Clear error message after 5 seconds
+                setTimeout(() => setStatusMessage(''), 5000);
+            } finally {
+                setLoading(false);
+            }
         }
     }
 
@@ -74,12 +123,13 @@ const Contact = ({ darkMode }) => {
                      className="lg:w:3/5 p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl shadow-lg border" 
                      data-aos='fade-left'
                      data-aos-delay='200'
-                     onSubmit={handleFormData}>
+                     onSubmit={handleFormData}
+                     noValidate>
                     
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
                            
                              {/* First Name */}
-                            <input className={`border rounded w-full py-2 px-3 sm:px-4 focus:border-orange-500 focus:ring-2  text-lg sm:text-xl focus:ring-orange-500/20 ${errors.name ? 'border-red-500' : ''}`}  
+                            <input className={`border rounded w-full py-2 px-3 sm:px-4 focus:border-orange-500 focus:ring-2  text-lg sm:text-xl focus:ring-orange-500/20 ${errors.firstname ? 'border-red-500' : ''}`}  
                                 id="firstname"
                                 type="text"
                                 name="firstname"
@@ -94,9 +144,10 @@ const Contact = ({ darkMode }) => {
                                 onChange={handleChange}
                                 required
                             />
+                            {errors.firstname && <p className="text-red-500 text-sm mt-1">{errors.firstname}</p>}
                                 {/* Last Name */}
 
-                            <input className={`border rounded w-full py-2 px-3 sm:px-4 text-lg sm:text-xl   focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 ${errors.name ? 'border-red-500' : ''}`}  
+                            <input className={`border rounded w-full py-2 px-3 sm:px-4 text-lg sm:text-xl   focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 ${errors.lastname ? 'border-red-500' : ''}`}  
                                 id="lastname"
                                 type="text"
                                 name="lastname"
@@ -111,6 +162,7 @@ const Contact = ({ darkMode }) => {
                                 onChange={handleChange}
                                 required
                             />
+                            {errors.lastname && <p className="text-red-500 text-sm mt-1">{errors.lastname}</p>}
                         </div>
                             
 
@@ -130,6 +182,7 @@ const Contact = ({ darkMode }) => {
                             onChange={handleChange}
                             required
                         />
+                        {errors.email && <p className="text-red-500 text-sm mt-1 -mt-3 mb-3">{errors.email}</p>}
                         
                         
                         {/* Phone */}
@@ -164,16 +217,32 @@ const Contact = ({ darkMode }) => {
                         onChange={handleChange}
                         required
                         />
+                        {errors.message && <p className="text-red-500 text-sm mt-1 -mt-3 mb-3">{errors.message}</p>}
+
+                        {/* Status Message */}
+                        {statusMessage && (
+                            <div className={`p-3 mb-4 rounded text-center text-sm sm:text-base font-medium ${
+                                statusMessage.startsWith('✓') 
+                                    ? 'bg-green-100 text-green-800' 
+                                    : 'bg-red-100 text-red-800'
+                            }`}>
+                                {statusMessage}
+                            </div>
+                        )}
   
-                         {/* Button */}
+                        {/* Button */}
                     
                         <button
                             type="submit"
-                            style={{background: 'linear-gradient(to right, #f97316, #f59e0b)'}}
-                            className="w-full font-semibold py-2 sm:py-3 px-4 rounded-lg text-lg sm:text-xl focus:outline-none focus:shadow-outline hover-shadow-lg hover:shadow-orange-500/25 hover:scale-[1.02] transition-all "
+                            disabled={loading}
+                            style={{
+                                background: loading ? '#666' : 'linear-gradient(to right, #f97316, #f59e0b)',
+                                opacity: loading ? 0.7 : 1
+                            }}
+                            className="w-full font-semibold py-2 sm:py-3 px-4 rounded-lg text-lg sm:text-xl focus:outline-none focus:shadow-outline hover-shadow-lg hover:shadow-orange-500/25 hover:scale-[1.02] transition-all disabled:hover:scale-100 disabled:cursor-not-allowed"
                             
                         >
-                            Send Message
+                            {loading ? 'Sending...' : 'Send Message'}
                         </button>
                        
                     </form>
