@@ -62,7 +62,7 @@ const Projects = ({ darkMode }) => {
       title: "Monify",
       description: "A finance management application that helps users track income and expenses, categorize transactions, and visualize spending patterns with interactive charts.",
       tags: ["React", "Node.js","Express.js","MongoDB","Chart.js",],
-      imageUrl: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
       githubUrl: "https://github.com/Ankush-37g/Monify",
       demoUrl: "https://monify-five.vercel.app/"
     },
