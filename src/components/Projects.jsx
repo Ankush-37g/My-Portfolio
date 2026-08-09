@@ -51,6 +51,14 @@ const ProjectCard = ({ title, description, tags, imageUrl, githubUrl, demoUrl, d
 const Projects = ({ darkMode }) => {
   const projects = [
     {
+      title: "MeetMind AI",
+      description: "A full-stack AI meeting assistant that converts audio/video into structured summaries, action items, and decisions using a map-reduce LLM pipeline with a RAG chatbot for interactive transcript querying.",
+      tags: ["Python", "React", "FastAPI", "LangChain", "ChromaDB", "Mistral AI", "Whisper", "SQLite"],
+      imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop",
+      githubUrl: "https://github.com/Ankush-37g/MeetMind-AI",
+      demoUrl: ""
+    },
+    {
       title: "Forever",
       description: "A full-stack e-commerce web application that allows users to browse products, manage a shopping cart, and securely complete payments using Stripe.",
       tags: ["React", "Node.js","Express.js","MongoDB", "Stripe"],
@@ -73,7 +81,8 @@ const Projects = ({ darkMode }) => {
       imageUrl: "https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/793c012801865f90d6e49dbb39008a1eb1723811/1-Figure1-1.png",
       githubUrl: "https://github.com/ElectroCubic/Multi-Agent-Pathfinding-Sim",
       demoUrl: ""
-    }
+    },
+ 
   
 
   ];

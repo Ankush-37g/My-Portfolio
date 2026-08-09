@@ -14,7 +14,11 @@ import {
   SiExpress, 
   SiPostgresql,
   SiPython,
-  SiCplusplus 
+  SiCplusplus,
+  SiFastapi,
+  SiLangchain,
+  SiStreamlit,
+  SiSqlite
 } from "react-icons/si";
 
 import LogoLoop from "../3dcomponents/LogoLoop.jsx";
@@ -124,6 +128,30 @@ const Skills = ({ darkMode }) => {
         proficiency: 75,
         color: "#336791",
         icon: <SiPostgresql className="w-8 h-8 text-[#336791]" />
+    },
+    {
+        name: "FastAPI",
+        proficiency: 72,
+        color: "#009688",
+        icon: <SiFastapi className="w-8 h-8 text-[#009688]" />
+    },
+    {
+        name: "LangChain",
+        proficiency: 70,
+        color: "#1EB980",
+        icon: <SiLangchain className="w-8 h-8" style={{ color: '#1EB980' }} />
+    },
+    {
+        name: "Streamlit",
+        proficiency: 75,
+        color: "#FF4B4B",
+        icon: <SiStreamlit className="w-8 h-8 text-[#FF4B4B]" />
+    },
+    {
+        name: "SQLite",
+        proficiency: 75,
+        color: "#003B57",
+        icon: <SiSqlite className="w-8 h-8 text-[#003B57]" />
     },
 
 
